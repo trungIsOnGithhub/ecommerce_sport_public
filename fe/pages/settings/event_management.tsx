@@ -5,7 +5,7 @@ import { SettingsLayout } from '../../feature/layouts';
 import withAuth from '../../store/withAuth';
 import Banner from '../../components/banner';
 import { BoxContainStyles } from '../../components/boxcontain';
-import bannerBG from '../../public/eventBG.jpg';
+import bannerBG from '../../public/li.jpg';
 import { Event } from '../../feature/userEvent';
 const User: NextPageWithLayout = () => {
     return (
