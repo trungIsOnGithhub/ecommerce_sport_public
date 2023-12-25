@@ -1,0 +1,1 @@
+export {Img, PaperStyles} from './main.style';

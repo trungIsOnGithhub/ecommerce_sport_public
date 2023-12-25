@@ -1,0 +1,1 @@
+export type {Province, District, Ward} from './address.interface';

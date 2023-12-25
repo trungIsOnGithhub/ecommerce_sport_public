@@ -1,0 +1,1 @@
+export type {IPromotion, IStadium} from './Promotion.interface';

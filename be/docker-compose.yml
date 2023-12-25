@@ -1,0 +1,26 @@
+version: '3'
+services:
+    spoty-be:
+        image: spoty-be:v1
+        container_name: spoty-be
+        # restart: always
+        environment:
+            PORT: ${PORT}
+            DATABASE: ${DATABASE}
+            SECRET_KEY: ${SECRET_KEY}
+            EXPIRES_IN: ${EXPIRES_IN}
+            BUCKET: ${BUCKET}
+            STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+            STRIPE_PUBLIC_KEY: ${STRIPE_PUBLIC_KEY}
+            FRONTEND_URL: ${FRONTEND_URL}
+            S3_ACCESS_KEY_ID: ${S3_ACCESS_KEY_ID}
+            S3_SECRET_ACCESS_KEY: ${S3_SECRET_ACCESS_KEY}
+            TWILLIO_ACCOUNTSID: ${TWILLIO_ACCOUNTSID}
+            TWILLIO_AUTHTOKEN: ${TWILLIO_AUTHTOKEN}
+            EMAIL_PASSWORD: ${EMAIL_PASSWORD}
+            # ports:
+            #  - 4000:3001
+networks:
+    default:
+        name: spoty
+        external: true
