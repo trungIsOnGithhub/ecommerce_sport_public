@@ -39,7 +39,7 @@ let data = [{
     'documents': items
 }];
 
-seeder.connect('mongodb://127.0.0.1:27017/hihi?retryWrites=true&w=majority', function() {
+seeder.connect('mongodb://localhost:27017/hihi', function() {
   seeder.loadModels(['schema.js']);
   seeder.clearModels([modelName], function() {
     seeder.populateModels(data, function() {
