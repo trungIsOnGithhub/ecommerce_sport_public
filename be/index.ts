@@ -1,4 +1,5 @@
 import dotenv from 'dotenv';
+import  { fakeDataUser } from './src/seeder/fake_user'
 import mongoose, { ConnectOptions } from 'mongoose';
 dotenv.config();
 
@@ -14,9 +15,14 @@ const connectionParam = {
     useUnifiedTopology: true,
 } as ConnectOptions;
 
+// let dbSuccess = false;
 mongoose
     .connect(URL_DB, connectionParam)
-    .then(() => console.log('Connect DB sucessfully'))
+    .then(() => {
+        console.log('Connect DB sucessfully');
+        // dbSuccess = true;
+        fakeDataUser(mongoose.connection);
+    })
     .catch(() => console.log('Fail to connect DB'));
 
 const port = process.env.PORT || 3001;
