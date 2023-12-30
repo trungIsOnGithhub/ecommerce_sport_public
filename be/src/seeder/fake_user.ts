@@ -8,32 +8,28 @@ import { Connection } from 'mongoose';
 import { IUser } from '../models/User.model';
 
 export function fakeDataUser(conn : Connection) {
-  let items = [];
   for(let i=0;i<12;++i){
-  items.push({
-    name: faker.internet.userName(),
-    email: faker.internet.email(),
-    phone: faker.phone.number(),
-    password: "",
-    passwordConfirm: "",
-    dateOfBirth: new Date(),
-    gender: "nam",
-    address: faker.location.city(),
-    photo: "",
-    role: "player",
-    points: 686,
-    isRealPhone: true,
-    passwordChangedAt: new Date(),
-    otp: 696969,
-    otpExpires: undefined,
-    comparePassword: () => true,
-    changedPasswordAfter: () => true,
-    createPasswordResetToken: () => true,
-    createSendOTP: () => true,
+    conn.collection<IUser>("users").insertOne({
+      name: faker.internet.userName(),
+      email: faker.internet.email(),
+      phone: faker.phone.number(),
+      password: "",
+      passwordConfirm: "",
+      dateOfBirth: new Date(),
+      gender: "nam",
+      address: faker.location.city(),
+      photo: "",
+      role: "player",
+      points: 686,
+      isRealPhone: true,
+      passwordChangedAt: new Date(),
+      otp: 696969,
+      otpExpires: undefined,
+      comparePassword: () => true,
+      changedPasswordAfter: () => true,
+      createPasswordResetToken: () => true,
+      createSendOTP: () => true,
   })};
-  for (let item of items) {
-    conn.collection<IUser>("users").insertOne(item);
-  }
 }
 
 // const modelName = 'User';
