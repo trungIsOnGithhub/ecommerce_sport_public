@@ -152,7 +152,7 @@ export const search_stadium = catchAsync(async (req: Request, res: Response, nex
         search_query.$or.push({ 'funds.max': { $gte: min, $lte: max } });
     }
     const query = Stadium.find(search_query);
-    const count = await query.clone().count();
+    const count = await query.clone().countDocuments();
     const features = new APIFeatures(query.populate('quantityOrder promotions'), req.query)
         .sort()
         .limitFields()

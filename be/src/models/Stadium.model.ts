@@ -3,7 +3,6 @@ import { getUrlByKey } from '../utils/aws_s3';
 import slugify from 'slugify';
 import { IStadiumArea } from './Stadium_area.model';
 import Order from './Order.model';
-
 export interface IStadium {
     name: string;
     contact: string;

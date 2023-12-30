@@ -164,7 +164,7 @@ export const createOrder = catchAsync(async (req: Request, res: Response, next: 
             if (promotion.type === 'Voucher') {
                 const countUsedProm = await Order.find({
                     'customer_program.promotion': customer_program[i].promotion,
-                }).count();
+                }).countDocuments();
                 if (promotion.quantity < countUsedProm) return next(new AppError(500, 'Promotion quantity is over'));
             }
             if (promotion.end_date < new Date(Date.now()) || promotion.start_date > new Date(Date.now()))
@@ -278,7 +278,7 @@ export const getOrdersByArea = catchAsync(async (req: Request, res: Response, ne
         const userIds = users.map((e: any) => e._id);
         search_query.where('user').in(userIds);
     }
-    const count = await search_query.clone().count();
+    const count = await search_query.clone().countDocuments();
 
     const features = new APIFeatures(search_query.populate('stadium_areas.stadium_area_ref user'), req.query)
         .sort()
@@ -373,7 +373,7 @@ export const getScheduleByUser = catchAsync(async (req: Request, res: Response, 
 export const getOrderByUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const search_query = Order.find({ user: res.locals.user._id });
 
-    const count = await search_query.clone().count();
+    const count = await search_query.clone().countDocuments();
 
     const features = new APIFeatures(search_query.populate('stadium_areas.stadium_area_ref user'), req.query)
         .sort()

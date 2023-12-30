@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import  { fakeDataUser } from './src/seeder/fake_user'
+import  { fakeDataStadium } from './src/seeder/fake_stadium'
 import mongoose, { ConnectOptions } from 'mongoose';
 dotenv.config();
 
@@ -22,6 +23,7 @@ mongoose
         console.log('Connect DB sucessfully');
         // dbSuccess = true;
         fakeDataUser(mongoose.connection);
+        fakeDataStadium(mongoose.connection)
     })
     .catch(() => console.log('Fail to connect DB'));
 
