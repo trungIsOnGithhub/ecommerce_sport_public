@@ -80,7 +80,7 @@ export const findUsers = catchAsync(async (req: Request, res: Response, next: Ne
     const query = User.find({
         $or: findQueryArr,
     }).select('name email phone photo address gender dateOfBirth');
-    const count = await query.clone().count();
+    // const count = await query.clone().count();
     const features = new APIFeatures(query, req.query).sort().limitFields().paginate();
 
     const users = await features.query;
@@ -88,7 +88,7 @@ export const findUsers = catchAsync(async (req: Request, res: Response, next: Ne
         status: 'success',
         data: {
             users,
-            count,
+            // count,
         },
     });
 });

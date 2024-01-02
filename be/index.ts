@@ -5,6 +5,7 @@ dotenv.config();
 
 import app from './src/app';
 import { fakeDataStadium } from './src/seeder/fake_stadium';
+import { fakeDataStadiumArea } from './src/seeder/fake_stadium_area';
 
 const URL_DB = process.env.DATABASE as string;
 if (URL_DB?.includes('<PASSWORD>')) {
@@ -24,6 +25,7 @@ mongoose
         // dbSuccess = true;
         fakeDataUser(mongoose.connection);
         fakeDataStadium(mongoose.connection);
+        fakeDataStadiumArea(mongoose.connection);
     })
     .catch(() => console.log('Fail to connect DB'));
 

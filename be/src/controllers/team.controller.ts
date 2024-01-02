@@ -181,7 +181,7 @@ export const findTeamByName = catchAsync(async (req: Request, res: Response, nex
     const { name } = req.query;
 
     const query = Team.find({ name: { $regex: name, $options: 'i' } });
-    const count = await query.clone().count();
+    // const count = await query.clone().count();
     const features = new APIFeatures(query.populate('members team_leader'), req.query).sort().limitFields().paginate();
 
     const teams = await features.query;
@@ -189,7 +189,7 @@ export const findTeamByName = catchAsync(async (req: Request, res: Response, nex
         status: 'success',
         data: {
             teams,
-            count,
+            // count,
         },
     });
 });

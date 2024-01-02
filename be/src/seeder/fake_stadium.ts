@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker';
-import { Connection, Types } from 'mongoose';
+import mongoose, { Connection } from 'mongoose';
 import { IStadium } from '../models/Stadium.model';
 
 export async function fakeDataStadium(conn: Connection) {
@@ -10,7 +10,7 @@ export async function fakeDataStadium(conn: Connection) {
   // let items = [];
   for (let i = 0; i < 8; ++i) {
     // Chọn một giá trị _id ngẫu nhiên từ danh sách
-    const randomUserID : Types.ObjectId = userIDs[Math.floor(Math.random() * userIDs.length)];
+    const randomUserID : mongoose.Schema.Types.ObjectId = userIDs[Math.floor(Math.random() * userIDs.length)];
 
     conn.collection<IStadium>("stadia").insertOne({
       name: faker.location.state(),
@@ -21,18 +21,18 @@ export async function fakeDataStadium(conn: Connection) {
       time_close: faker.date.anytime().toTimeString(),
       location: {
         province: {
-          code: faker.random.alphaNumeric(),
-          name: faker.address.state(),
+          code: faker.string.alphanumeric(),
+          name: faker.location.state(),
         },
         district: {
-          code: faker.random.alphaNumeric(),
-          name: faker.address.city(),
+          code: faker.string.alphanumeric(),
+          name: faker.location.city(),
         },
         ward: {
-          code: faker.random.alphaNumeric(),
-          name: faker.address.city(),
+          code: faker.string.alphanumeric(),
+          name: faker.location.city(),
         },
-        address: faker.address.streetAddress(),
+        address: faker.location.streetAddress(),
       },
       avatar: "",
       images: [],

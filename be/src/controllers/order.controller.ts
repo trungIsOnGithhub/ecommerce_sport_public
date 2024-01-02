@@ -162,10 +162,10 @@ export const createOrder = catchAsync(async (req: Request, res: Response, next: 
             const promotion = await Promotion.findById(customer_program[i].promotion);
             if (!promotion) return next(new AppError(500, 'Promotion is not exsit'));
             if (promotion.type === 'Voucher') {
-                const countUsedProm = await Order.find({
-                    'customer_program.promotion': customer_program[i].promotion,
-                }).count();
-                if (promotion.quantity < countUsedProm) return next(new AppError(500, 'Promotion quantity is over'));
+                // const countUsedProm = await Order.find({
+                //     'customer_program.promotion': customer_program[i].promotion,
+                // }).count();
+                // if (promotion.quantity < countUsedProm) return next(new AppError(500, 'Promotion quantity is over'));
             }
             if (promotion.end_date < new Date(Date.now()) || promotion.start_date > new Date(Date.now()))
                 return next(new AppError(500, 'Promotion time is over'));
@@ -278,7 +278,7 @@ export const getOrdersByArea = catchAsync(async (req: Request, res: Response, ne
         const userIds = users.map((e: any) => e._id);
         search_query.where('user').in(userIds);
     }
-    const count = await search_query.clone().count();
+    // const count = await search_query.clone().count();
 
     const features = new APIFeatures(search_query.populate('stadium_areas.stadium_area_ref user'), req.query)
         .sort()
@@ -289,7 +289,7 @@ export const getOrdersByArea = catchAsync(async (req: Request, res: Response, ne
     res.status(200).json({
         status: 'success',
         orders,
-        count,
+        // count,
     });
 });
 
@@ -373,7 +373,7 @@ export const getScheduleByUser = catchAsync(async (req: Request, res: Response, 
 export const getOrderByUser = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
     const search_query = Order.find({ user: res.locals.user._id });
 
-    const count = await search_query.clone().count();
+    // const count = await search_query.clone().count();
 
     const features = new APIFeatures(search_query.populate('stadium_areas.stadium_area_ref user'), req.query)
         .sort()
@@ -384,7 +384,7 @@ export const getOrderByUser = catchAsync(async (req: Request, res: Response, nex
     res.status(200).json({
         status: 'success',
         orders,
-        count,
+        // count,
     });
 });
 
