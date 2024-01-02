@@ -138,32 +138,73 @@ export const update_stadium = catchAsync(async (req: Request, res: Response, nex
 });
 
 export const search_stadium = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const { name, provinceId, districtId, wardId, funds } = req.query;
-    const search_query = {} as any;
-    if (name) search_query['name'] = { $regex: name, $options: 'i' };
-    if (wardId) search_query['location.ward.code'] = { $regex: wardId };
-    if (districtId) search_query['location.district.code'] = { $regex: districtId };
-    if (provinceId) search_query['location.province.code'] = { $regex: provinceId };
-    if (funds) {
-        search_query['$or'] = [];
-        const min = Number(JSON.parse(funds as string).min);
-        const max = Number(JSON.parse(funds as string).max);
-        search_query.$or.push({ 'funds.min': { $gte: min, $lte: max } });
-        search_query.$or.push({ 'funds.max': { $gte: min, $lte: max } });
-    }
-    const query = Stadium.find(search_query);
+    // const { name, provinceId, districtId, wardId, funds } = req.query;
+    // // const search_query = {} as any;
+    // // if (name) search_query['name'] = { $regex: name, $options: 'i' };
+    // // if (wardId) search_query['location.ward.code'] = { $regex: wardId };
+    // // if (districtId) search_query['location.district.code'] = { $regex: districtId };
+    // // if (provinceId) search_query['location.province.code'] = { $regex: provinceId };
+    // // if (funds) {
+    // //     search_query['$or'] = [];
+    // //     const min = Number(JSON.parse(funds as string).min);
+    // //     const max = Number(JSON.parse(funds as string).max);
+    // //     search_query.$or.push({ 'funds.min': { $gte: min, $lte: max } });
+    // //     search_query.$or.push({ 'funds.max': { $gte: min, $lte: max } });
+    // // }
+    // const search_query = {} as any;
+    // if (name) search_query['name'] = { $regex: name, $options: 'i' };
+    // const query = Stadium.find(search_query);
     // const count = await query.clone().count();
-    const features = new APIFeatures(query.populate('quantityOrder promotions'), req.query)
-        .sort()
-        .limitFields()
-        .paginate();
+    // const features = new APIFeatures(query, req.query)
+    //     .sort()
+    //     .limitFields()
+    //     .paginate();
 
-    const stadiums = await features.query;
+    // const stadiums = await features.query;
+    // res.status(StatusCodes.OK).json({
+    //     status: 'success',
+    //     data: {
+    //         stadiums,
+    //         count
+    //     },
+    // });
+
+    const { name } = req.query;
+    const findQueryArr = [];
+    // if (name) findQueryArr.push({ name: { $regex: name, $options: 'i' } });
+    // if (phone) findQueryArr.push({ phone: { $regex: phone, $options: 'i' } });
+    // const query = User.find({
+    //     $or: findQueryArr,
+    // }).select('name email phone photo address gender dateOfBirth');
+    // const count = await query.clone().count();
+    // const features = new APIFeatures(query, req.query).sort().limitFields().paginate();
+
+    // const users = await features.query;
+    // res.status(StatusCodes.OK).json({
+    //     status: 'success',
+    //     data: {
+    //         users,
+    //         // count,
+    //     },
+    // });
+
+    // const search_query = {} as any;
+    // if (name) search_query['name'] = { $regex: name, $options: 'i' };
+
+    // const query = Stadium.find(search_query);
+    // const count = await query.clone().count();
+    // const features = new APIFeatures(query, req.query)
+    //     .sort()
+    //     .limitFields()
+    //     .paginate();
+
+    // const stadiums = await features.query;
+    const stadiums = await Stadium.find({ name: name }).populate('user');
     res.status(StatusCodes.OK).json({
         status: 'success',
         data: {
-            stadiums,
-            // count,
+            stadiums
+            // count
         },
     });
 });

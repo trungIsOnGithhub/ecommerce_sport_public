@@ -20,7 +20,7 @@ export interface IStadium {
     updateAt: Date;
     deleteAt: Date;
     user: ObjectId;
-    find: Function;
+    // find: Function;
 }
 
 const stadiumSchema = new Schema<IStadium>(
@@ -68,32 +68,32 @@ const stadiumSchema = new Schema<IStadium>(
     },
 );
 
-stadiumSchema
-    .virtual('quantityOrder', {
-        ref: 'StadiumArea',
-        foreignField: 'stadium',
-        localField: '_id',
-    })
-    .get(function (areas) {
-        return areas?.reduce((curr: number, area: any) => {
-            return curr + area.quantityOrder;
-        }, 0);
-    });
+// stadiumSchema
+//     .virtual('quantityOrder', {
+//         ref: 'StadiumArea',
+//         foreignField: 'stadium',
+//         localField: '_id',
+//     })
+//     .get(function (areas) {
+//         return areas?.reduce((curr: number, area: any) => {
+//             return curr + area.quantityOrder;
+//         }, 0);
+//     });
 
-stadiumSchema
-    .virtual('promotions', {
-        ref: 'Promotion',
-        foreignField: 'stadium',
-        localField: '_id',
-    })
-    .get(function (promotions) {
-        const promotionList: any[] = [];
-        promotions?.forEach((promotion: any) => {
-            if (promotion.start_date < new Date(Date.now()) && promotion.end_date > new Date(Date.now()))
-                promotionList.push(promotion._id);
-        });
-        return promotionList;
-    });
+// stadiumSchema
+//     .virtual('promotions', {
+//         ref: 'Promotion',
+//         foreignField: 'stadium',
+//         localField: '_id',
+//     })
+//     .get(function (promotions) {
+//         const promotionList: any[] = [];
+//         promotions?.forEach((promotion: any) => {
+//             if (promotion.start_date < new Date(Date.now()) && promotion.end_date > new Date(Date.now()))
+//                 promotionList.push(promotion._id);
+//         });
+//         return promotionList;
+//     });
 
 stadiumSchema.pre('save', function (next) {
     this.slug = slugify(this.name, '_');
@@ -106,19 +106,20 @@ stadiumSchema.pre(/Update$/, function (next) {
     next();
 });
 stadiumSchema.pre(/^find/, function (next) {
-    this.find({ deleteAt: undefined });
-
+    // this.find({ deleteAt: undefined });
+    console.log("Preee!!!!");
     next();
 });
 stadiumSchema.post('find', async function (docs, next) {
-    docs = await Promise.all(
-        docs.map(async (doc: any) => {
-            const avatarUrl = await getUrlByKey({ key: doc.avatar });
-            doc.avatar = avatarUrl.url;
-            const imageUrls = await Promise.all(doc.images.map((image: any) => getUrlByKey({ key: image })));
-            doc.images = imageUrls.map((imageUrl) => imageUrl.url);
-        }),
-    );
+    // docs = await Promise.all(
+    //     docs.map(async (doc: any) => {
+    //         const avatarUrl = await getUrlByKey({ key: doc.avatar });
+    //         doc.avatar = avatarUrl.url;
+    //         const imageUrls = await Promise.all(doc.images.map((image: any) => getUrlByKey({ key: image })));
+    //         doc.images = imageUrls.map((imageUrl) => imageUrl.url);
+    //     }),
+    // );
+    console.log("Postttt!!!!");
     next();
 });
 

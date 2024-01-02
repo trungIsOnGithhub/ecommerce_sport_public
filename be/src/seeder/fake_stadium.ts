@@ -3,13 +3,12 @@ import mongoose, { Connection } from 'mongoose';
 import { IStadium } from '../models/Stadium.model';
 
 export async function fakeDataStadium(conn: Connection) {
-  console.log("check")
+  // console.log("check")
   // Lấy danh sách _id từ collection "users"
   const userIDs = await conn.collection("users").distinct("_id");
 
   // let items = [];
-  for (let i = 0; i < 8; ++i) {
-    // Chọn một giá trị _id ngẫu nhiên từ danh sách
+  for (let i = 0; i < 6; ++i) {
     const randomUserID : mongoose.Schema.Types.ObjectId = userIDs[Math.floor(Math.random() * userIDs.length)];
 
     conn.collection<IStadium>("stadia").insertOne({
@@ -42,7 +41,7 @@ export async function fakeDataStadium(conn: Connection) {
       updateAt: new Date(),
       deleteAt: new Date(),
       user: randomUserID, // Gán một giá trị _id từ danh sách
-      find: () => true
+      // find: () => true
     });
   }
 }
