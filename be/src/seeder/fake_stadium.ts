@@ -8,7 +8,7 @@ export async function fakeDataStadium(conn: Connection) {
   const userIDs = await conn.collection("users").distinct("_id");
 
   // let items = [];
-  for (let i = 0; i < 6; ++i) {
+  for (let i = 0; i < 8; ++i) {
     const randomUserID : mongoose.Schema.Types.ObjectId = userIDs[Math.floor(Math.random() * userIDs.length)];
 
     conn.collection<IStadium>("stadia").insertOne({
@@ -36,7 +36,7 @@ export async function fakeDataStadium(conn: Connection) {
       avatar: "",
       images: [],
       funds: {},
-      slug: "slug-example",
+      slug: "slug-" + i + Math.random(),
       createAt: new Date(),
       updateAt: new Date(),
       deleteAt: new Date(),

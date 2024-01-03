@@ -8,7 +8,7 @@ import { Connection } from 'mongoose';
 import { IUser } from '../models/User.model';
 
 export function fakeDataUser(conn : Connection) {
-  for(let i=0;i<8;++i){
+  for(let i=0;i<12;++i){
     conn.collection<IUser>("users").insertOne({
       name: faker.internet.userName(),
       email: faker.internet.email(),

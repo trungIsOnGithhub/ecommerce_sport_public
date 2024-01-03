@@ -24,7 +24,7 @@ export default function ImgMediaCard({ stdData }: { stdData: any }) {
     // console.log(stdData);
     return (
         <CardStyle>
-            <CardMedia component="img" alt="green iguana" height="140" image={stdData.avatar} />
+            <CardMedia component="img" alt="stadium img" height="140" image={stdData.avatar.length === 0 ? "https://monngonmoingay.com/wp-content/uploads/2023/12/dui-de-quay-5.jpg" : stdData.avatar} />
             <CardContent>
                 <TypographyStyle gutterBottom variant="h5" sx={{ maxHeight: '45px' }}>
                     {stdData.name}
@@ -59,11 +59,11 @@ export default function ImgMediaCard({ stdData }: { stdData: any }) {
                     <BoxStyle>
                         <Box component="div">
                             <TypographyContentStyle>
-                                <strong>{stdData.quantityOrder}</strong>
+                                <strong>{stdData.quantityOrder}+ 86</strong>
                                 <span> đã đặt</span>
                             </TypographyContentStyle>
                         </Box>
-                    </BoxStyle>
+                    </BoxStyle> 
                 </Box>
             </CardContent>
             <CardActions sx={{ position: 'absolute', bottom: '0' }}>
@@ -78,7 +78,7 @@ export default function ImgMediaCard({ stdData }: { stdData: any }) {
                     </ButtonStyle>
                 </Link>
             </CardActions>
-            {stdData.promotions?.length !== 0 && <Discount>Sale</Discount>}
+            {/* {stdData.promotions?.length !== 0 && <Discount>Sale</Discount>} */}
         </CardStyle>
     );
 }

@@ -11,15 +11,15 @@ function getRandomInt(min : number, max : number) : number {
 export async function fakeDataStadiumArea(conn: Connection) {
   // console.log("check")
   // Lấy danh sách _id từ collection "users"
-  const stadiumIDs = await conn.collection("stadium").distinct("_id");
+  const stadiumIDs = await conn.collection("stadia").distinct("_id");
 
   // let items = [];
-  for (let i=0;i<4;++i) {
+  for (let i=0;i<6;++i) {
     // Chọn một giá trị _id ngẫu nhiên từ danh sách
     const randomStadiumID : mongoose.Schema.Types.ObjectId = stadiumIDs[Math.floor(Math.random() * stadiumIDs.length)];
 
     conn.collection<IStadiumArea>("stadiumareas").insertOne({
-        name: "Sample Stadium Area: " + Math.floor(Math.random() * 10),
+        name: "Sample Stadium Area: " + i,
         size: "sample-stadium-size",
         quantity: 269,
         description: "sample-stadium-area-description",

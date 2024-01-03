@@ -35,6 +35,7 @@ class StadiumService {
                 },
             });
     }
+
     async getStadiumDetail(slug: string) {
         return await http.get<any>(`/stadium/${slug}`);
     }

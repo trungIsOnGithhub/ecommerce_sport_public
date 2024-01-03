@@ -104,6 +104,7 @@ export const getAllAreaOfStadium = catchAsync(async (req: Request, res: Response
         status: 'success',
         data: {
             areas,
+            hihi: true
         },
     });
 });
