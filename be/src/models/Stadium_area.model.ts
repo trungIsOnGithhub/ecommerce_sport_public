@@ -16,8 +16,8 @@ export interface IStadiumArea {
     updateAt: Date;
     deleteAt: Date;
     stadium: ObjectId;
-    find: Function;
-    clone: Function;
+    // find: Function;
+    // clone: Function;
 }
 
 const stadiumAreaSchema = new Schema<IStadiumArea>(
@@ -71,7 +71,7 @@ const stadiumAreaSchema = new Schema<IStadiumArea>(
     },
 );
 stadiumAreaSchema.pre(/^find/, function (next) {
-    this.find({ deleteAt: undefined });
+    // this.find({ deleteAt: undefined });
     next();
 });
 stadiumAreaSchema.pre('findOneAndUpdate', function (next) {
