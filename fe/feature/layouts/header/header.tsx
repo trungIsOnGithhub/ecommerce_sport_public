@@ -23,14 +23,14 @@ const Header = () => {
     return (
         <ContainerStyle maxWidth="xl">
             <MenuUserDrawer />
-            <Image height="60px" width="120px" src={logo} alt="logo spoty" />
+            <Image height="60px" width="120px" src={logo} alt="logo SportWeb" />
             <BoxNavStyle sx={{ display: { xs: 'none', md: 'flex' } }}>
                 <Link href="/">
                     <ButtonNavStyle>Trang chủ</ButtonNavStyle>
                 </Link>
-                <Link href="/team">
-                    <ButtonNavStyle>Đội bóng</ButtonNavStyle>
-                </Link>
+                    {/* <Link href="/team">
+                        <ButtonNavStyle>Đội bóng</ButtonNavStyle>
+                    </Link> */}
                 <Link href="/about">
                     <ButtonNavStyle>Giới thiệu</ButtonNavStyle>
                 </Link>

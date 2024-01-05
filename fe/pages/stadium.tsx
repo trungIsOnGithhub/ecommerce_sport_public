@@ -71,7 +71,7 @@ const Detail: NextPageWithLayout = () => {
                 <Grid container spacing={{ xs: 2, lg: 5 }}>
                     <Grid item md={5} alignItems="flex-start">
                         <ImageSlider
-                            avatar={stdData.avatar ? stdData.avatar : ''}
+                            avatar={stdData.avatar ? stdData.avatar : 'https://monngonmoingay.com/wp-content/uploads/2023/12/pancake-chocolate-mut-cam-5.jpg'}
                             data={stdData.images ? stdData.images : []}
                         />
                     </Grid>

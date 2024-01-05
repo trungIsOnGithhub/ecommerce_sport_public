@@ -91,17 +91,17 @@ const TypographySearchStyles = styled(Typography)(({ theme }) => ({
     },
 }));
 
-const TypographyStyle = styled(Typography)(({ theme }) => ({
-    fontSize: '30px',
-    fontWeight: '700',
-    marginRight: '40px',
-    marginLeft: '10px',
-    marginBottom: '10px',
-    color: theme.color.textLight,
-    [theme.breakpoints.down('md')]: {
-        display: 'none',
-    },
-}));
+// const TypographyStyle = styled(Typography)(({ theme }) => ({
+//     fontSize: '30px',
+//     fontWeight: '700',
+//     marginRight: '40px',
+//     marginLeft: '10px',
+//     marginBottom: '10px',
+//     color: theme.color.textLight,
+//     [theme.breakpoints.down('md')]: {
+//         display: 'none',
+//     },
+// }));
 
 const BoxTabsStyles = styled(Box)({
     width: '100%',
@@ -151,10 +151,10 @@ const Home: NextPageWithLayout = ({ provinces }: any) => {
             <PaperContainStyles elevation={10}>
                 <BoxContainStyles className="searchBox">
                     <BoxSearchStyles>
-                        <TypographySearchStyles>SPOTY</TypographySearchStyles>
+                        <TypographySearchStyles>SportWeb</TypographySearchStyles>
                     </BoxSearchStyles>
                     <BoxSearchStyles>
-                        <TypographyStyle>Tìm kiếm sân bóng một cách dễ dàng, nhanh chóng và tiện lợi</TypographyStyle>
+                        <h2>Kết Nối Cộng Đồng Thể Thao</h2>
                     </BoxSearchStyles>
                     <Searchbar provinces={provinces} handleSubmit={handleSubmit} />
                 </BoxContainStyles>

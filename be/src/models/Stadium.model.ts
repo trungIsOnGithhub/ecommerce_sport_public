@@ -15,7 +15,7 @@ export interface IStadium {
     avatar: string;
     images: string[];
     funds: object;
-    slug: string;
+    slug: string;   
     createAt: Date;
     updateAt: Date;
     deleteAt: Date;

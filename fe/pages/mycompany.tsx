@@ -18,15 +18,15 @@ const PaperContainStyles = styled(Paper)({
     backgroundSize: 'contain',
 });
 
-const TypographyStyles = styled(Typography)(({ theme }) => ({
-    fontFamily: 'Nunito',
-    fontWeight: '900',
-    fontSize: '60px',
-    lineHeight: '55px',
-    letterSpacing: '5px',
-    color: '#FFFFFF',
-    margin: '30px 0',
-}));
+// const TypographyStyles = styled(Typography)(({ theme }) => ({
+//     fontFamily: 'Nunito',
+//     fontWeight: '900',
+//     fontSize: '60px',
+//     lineHeight: '55px',
+//     letterSpacing: '5px',
+//     color: '#FFFFFF',
+//     margin: '30px 0',
+// }));
 
 const BoxPaperStyles = styled(Box)({
     width: '100%',
@@ -34,14 +34,14 @@ const BoxPaperStyles = styled(Box)({
     padding: '3% 5%',
 });
 
-const PStyles = styled('p')(({ theme }) => ({
-    color: '#FFFFFF',
-    fontFamily: 'Nunito',
-    fontSize: '25px',
-    fontWeight: '700',
-    lineHeight: '34px',
-    margin: 0,
-}));
+// const PStyles = styled('p')(({ theme }) => ({
+//     color: '#FFFFFF',
+//     fontFamily: 'Nunito',
+//     fontSize: '25px',
+//     fontWeight: '700',
+//     lineHeight: '34px',
+//     margin: 0,
+// }));
 
 const TypographyTitleStyles = styled(Typography)(({ theme }) => ({
     fontFamily: 'Nunito',
@@ -93,12 +93,12 @@ const About: NextPageWithLayout = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={12}>
-                    <PaperContainStyles elevation={10}>
+                       <PaperContainStyles elevation={10}>
                         <BoxPaperStyles>
-                            <TypographyStyles>SPOTY</TypographyStyles>
+                            <h1>Tiêu Đề</h1>
                             <Box>
-                                <PStyles>Đốt lửa nhiệt huyết - Kết nối đam mê</PStyles>
-                                <PStyles>Kiến tạo cộng đồng bóng đá rộng lớn, lành mạnh</PStyles>
+                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non hendrerit neque.</h3>
+                                <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non hendrerit neque.</h3>
                             </Box>
                         </BoxPaperStyles>
                     </PaperContainStyles>
@@ -107,29 +107,27 @@ const About: NextPageWithLayout = () => {
                 <Grid item xs={12} md={12}>
                     <Box sx={{ padding: '20px 0' }}>
                         <TypographyTitleStyles>
-                            Giới thiệu về <SpanStyles>SPOTY</SpanStyles>
+                            Giới thiệu về <SpanStyles>Trang Web</SpanStyles>
                         </TypographyTitleStyles>
                         <PContentStyles>
-                            Mạng xã hội bóng đá dành cho anh em đầu tiên và lớn tại Việt Nam. Ở đây, anh em có thể dễ
-                            dàng tìm chỗ chơi, tìm đồng đội hay đối thủ để chơi một cách vui vẻ, công bằng và an toàn
-                            nhất.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non hendrerit neque. Sed sagittis, sem congue ultrices fringilla, eros sapien varius augue, ut ultrices odio neque in urna. Morbi tincidunt, libero et euismod tincidunt, leo dui imperdiet quam, quis semper lacus dui sit amet elit. Proin eu eros pretium, efficitur ex sed, pharetra ligula.
                         </PContentStyles>
                         <Grid container sx={{ marginTop: '60px' }}>
                             <Grid item xs={6} md={3}>
                                 <BoxMilestonStyles>
-                                    <BoxNumberStyles>2022</BoxNumberStyles>
+                                    <BoxNumberStyles>2023</BoxNumberStyles>
                                     <PContentStyles>Thành lập</PContentStyles>
                                 </BoxMilestonStyles>
                             </Grid>
                             <Grid item xs={6} md={3}>
                                 <BoxMilestonStyles>
-                                    <BoxNumberStyles>0+</BoxNumberStyles>
+                                    <BoxNumberStyles>9999999+</BoxNumberStyles>
                                     <PContentStyles>Người dùng</PContentStyles>
                                 </BoxMilestonStyles>
                             </Grid>
                             <Grid item xs={6} md={3}>
                                 <BoxMilestonStyles>
-                                    <BoxNumberStyles>0+</BoxNumberStyles>
+                                    <BoxNumberStyles>9999999+</BoxNumberStyles>
                                     <PContentStyles>Sân bóng</PContentStyles>
                                 </BoxMilestonStyles>
                             </Grid>
@@ -143,20 +141,20 @@ const About: NextPageWithLayout = () => {
                     </Box>
                 </Grid>
                 <Grid item xs={12} md={12}>
-                    <TypographyTitleStyles>Thành viên công ty</TypographyTitleStyles>
+                    <TypographyTitleStyles>Đại diện công ty</TypographyTitleStyles>
                     <Grid container spacing={2}>
                         <Grid item xs={6} md={4}>
                             <CardMember
-                                name="Nguyễn Minh Bảo"
-                                title="No pain, no gain"
-                                image="https://scontent.fsgn8-4.fna.fbcdn.net/v/t1.6435-9/122225963_396268598212073_646251198759943111_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=STh8s7dryn0AX9KYTj0&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfDPUsFfdmaQW9kJd9_dIz1fcOW6ynuyCj8lPrVgMlhqOQ&oe=648F153E"
+                                name="Nguyễn Văn A"
+                                title="Người Đại Diện 1"
+                                image="https://monngonmoingay.com/wp-content/uploads/2018/06/muc-chien-gion-xot-tac-5.jpg"
                             />
                         </Grid>
                         <Grid item xs={6} md={4}>
                             <CardMember
-                                name="Nguyễn Trung Phong"
-                                title="No pain, no gain"
-                                image="https://scontent.fsgn8-4.fna.fbcdn.net/v/t39.30808-1/277815143_2887863068172435_2896726056431508218_n.jpg?stp=c0.122.320.320a_dst-jpg_p320x320&_nc_cat=102&ccb=1-7&_nc_sid=7206a8&_nc_ohc=ZYAvdSbGjNEAX8EjZtR&_nc_ht=scontent.fsgn8-4.fna&oh=00_AfC_NJzWFZ_M6yZPkRP7yJUU4aPg0tNZMoJH-x1hXWXUQQ&oe=646D3074"
+                                name="Nguyễn Văn B"
+                                title="Người Đại Diện 2"
+                                image="https://monngonmoingay.com/wp-content/uploads/2023/11/bun-rieu-cua-5.jpg"
                             />
                         </Grid>
                     </Grid>
@@ -165,24 +163,24 @@ const About: NextPageWithLayout = () => {
                     <Box>
                         <PContentStyles>
                             <span style={{ color: 'black' }}>
-                                <SpanStyles>Công ty TNHH SPOTY</SpanStyles>
+                                <SpanStyles>Công ty TNHH: </SpanStyles>
                             </span>
                         </PContentStyles>
                         <PContentStyles>
-                            <span style={{ color: 'black' }}>Địa chỉ:</span> Kí túc xá khu A, Dĩ An, Bình Dương
+                            <span style={{ color: 'black' }}>Địa chỉ:</span> Dĩ An, Bình Dương
                         </PContentStyles>
                         <PContentStyles>
                             <span style={{ color: 'black' }}>Giấy chứng nhận Đăng ký Kinh doanh:</span>{' '}
                             <Link href="/">Link</Link>
                         </PContentStyles>
                         <PContentStyles>
-                            <span style={{ color: 'black' }}>Thông tin liên hệ:</span> Nguyễn Minh Bảo
+                            <span style={{ color: 'black' }}>Thông tin liên hệ:</span> Nguyễn Văn A
                         </PContentStyles>
                         <PContentStyles>
-                            <span style={{ color: 'black' }}>Số điện thoại:</span> 0392747972
+                            <span style={{ color: 'black' }}>Số điện thoại:</span> 1234567
                         </PContentStyles>
                         <PContentStyles>
-                            <span style={{ color: 'black' }}>Email:</span> bao.nguyen2k1@hcmut.edu.vn
+                            <span style={{ color: 'black' }}>Email:</span> trung@trung.com
                         </PContentStyles>
                     </Box>
                 </Grid>

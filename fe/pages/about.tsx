@@ -13,8 +13,8 @@ import fieldImage from '/public/li.jpg';
 import orderImage from '/public/li.jpg';
 import promotionImage from '/public/li.jpg';
 import { AdvertisingAboutUs } from '../feature/advertisingCart/advertisingCart';
-import girlSpoty from '../public/li.jpg';
-import boySpoty from '../public/li.jpg';
+import girlSportWeb from '../public/li.jpg';
+import boySportWeb from '../public/li.jpg';
 import titleImage from '../public/li.jpg';
 
 const PaperContainStyles = styled(Paper)({
@@ -101,11 +101,11 @@ const About: NextPageWithLayout = () => {
                     <PaperContainStyles elevation={10}>
                         <BoxPaperStyles>
                             <TypographyStyles>
-                                VỀ <SpanStyles>SPOTY</SpanStyles> TÌM KIẾM SÂN BÓNG MỘT CÁCH DỄ DÀNG TIỆN LỢI
+                                VỀ <SpanStyles>SportWeb</SpanStyles> KẾT NỐI CỘNG ĐỒNG THỂ THAO MỘT CÁCH DỄ DÀNG TIỆN LỢI
                             </TypographyStyles>
                             <BoxContainStyles>
                                 <PStyles>
-                                    Đặt sân, tạo câu lạc bộ riêng, cáp kèo hay tìm đối nhanh chóng dễ dàng.
+                                    Đặt sân, dụng cụ, tạo đội nhóm, cáp kèo hay tìm đội và người cùng chơi nhanh chóng dễ dàng.
                                 </PStyles>
                                 <Box>
                                     <ButtonStyle variant="contained" href="https://zalo.me/0392747972">
@@ -119,13 +119,10 @@ const About: NextPageWithLayout = () => {
                 <Grid item sm={12} md={12}>
                     <BoxQAStyles>
                         <TypographyQuestionStyles>
-                            <SpanStyles>SPOTY</SpanStyles> có liên quan gì đến bạn ?
+                            <SpanStyles>SportWeb</SpanStyles> có liên quan gì đến bạn ?
                         </TypographyQuestionStyles>
                         <PAnswerStyles>
-                            SPOTY sẽ khiến cho việc quản lý ứng dụng đặt sân bóng đá dễ dàng và tiện lợi hơn bao giờ
-                            hết, cùng với đó SPOTY sẽ giúp tăng nhu cầu của khách hàng về sân thể thao giúp cho việc
-                            tăng nhu cầu sử dụng, đặt trước và tạo sự thích thú cho khách hàng, khuyến khích khách hàng
-                            sử dụng nhiều hơn.
+                        Curabitur blandit eget ipsum ut maximus. Suspendisse pharetra lectus at est placerat, eget interdum est fermentum. Suspendisse eget lacus nec lectus sollicitudin condimentum. Nulla vulputate mollis nisi, ac sagittis neque convallis lacinia. Integer neque elit, vehicula ut vehicula at, luctus id odio. Nullam dictum nisi et sem pretium, eget aliquam ex pharetra. Mauris eu facilisis nibh. Donec ornare sodales erat, at posuere metus fermentum quis. Phasellus suscipit nulla dolor, ac cursus tellus tincidunt suscipit. Quisque ultrices vel purus ac semper.
                         </PAnswerStyles>
                     </BoxQAStyles>
                 </Grid>
@@ -153,20 +150,18 @@ const About: NextPageWithLayout = () => {
                 <Grid item sm={12} md={12}>
                     <BoxQAStyles>
                         <TypographyQuestionStyles>
-                            <SpanStyles>SPOTY</SpanStyles> liên quan gì đến chủ sân ?
+                            <SpanStyles>SportWeb</SpanStyles> có thể làm được gì cho nhà kinh doanh ?
                         </TypographyQuestionStyles>
                         <PAnswerStyles>
-                            Phần mềm quản lý sân bóng của Sporta hỗ trợ chủ sân quản lý lịch đặt sân hiệu quả và chuyên
-                            nghiệp hơn. Ở đó chủ sân có thể biết được một ngày sân có bao nhiêu lịch, lịch đặt ở sân
-                            nào, giờ nào? Giờ nào còn sân trống một cách nhanh chóng, dễ dàng.
+                        Curabitur blandit eget ipsum ut maximus. Suspendisse pharetra lectus at est placerat, eget interdum est fermentum. Suspendisse eget lacus nec lectus sollicitudin condimentum. Nulla vulputate mollis nisi, ac sagittis neque convallis lacinia. Integer neque elit, vehicula ut vehicula at, luctus id odio. Nullam dictum nisi et sem pretium, eget aliquam ex pharetra. Mauris eu facilisis nibh. Donec ornare sodales erat, at posuere metus fermentum quis. Phasellus suscipit nulla dolor, ac cursus tellus tincidunt suscipit. Quisque ultrices vel purus ac semper.     
                         </PAnswerStyles>
                     </BoxQAStyles>
                 </Grid>
                 <Grid item xs={12} md={4}>
                     <AdvertisingCart
-                        content="Thông tin sân bóng sẽ được quản lí như thêm sửa xóa một các dễ dàng."
+                        content="Thông tin sân chơi sẽ được quản lí như thêm sửa xóa một các dễ dàng."
                         image={fieldImage}
-                        title="Quản lí sân bóng"
+                        title="Quản lí sân"
                     />
                 </Grid>
                 <Grid item xs={12} md={4}>
@@ -185,7 +180,7 @@ const About: NextPageWithLayout = () => {
                 </Grid>
                 <Grid item xs={12} md={12}>
                     <AdvertisingAboutUs
-                        image={girlSpoty}
+                        image={girlSportWeb}
                         title="Khách hàng của chúng tôi nói gì?"
                         content="Bạn muốn thuê sân? Thông tin sân gần vị trí của bạn nhất, đặt sân online, tiện lợi, dễ dàng."
                         buttonName="Đặt ngay"
@@ -193,9 +188,9 @@ const About: NextPageWithLayout = () => {
                         reverse={false}
                     />
                     <AdvertisingAboutUs
-                        image={boySpoty}
-                        title="Hợp tác với SPOTY"
-                        content="Bạn là chủ sân? Bạn muốn quản lý sân của mình một cách thông minh. Bạn muốn quản lý các dịch vụ tiện ích tại sân. SPOTY sẽ giúp bạn cải thiện hiệu suất quản lý, tăng doanh thu của sân bóng"
+                        image={boySportWeb}
+                        title="Hợp tác với SportWeb"
+                        content="Bạn là chủ sân? Bạn muốn quản lý sân của mình một cách thông minh. Bạn muốn quản lý các dịch vụ tiện ích tại sân. SportWeb sẽ giúp bạn cải thiện hiệu suất quản lý, tăng doanh thu của sân bóng"
                         buttonName="Đăng kí chủ sân"
                         link="https://zalo.me/"
                         reverse={true}

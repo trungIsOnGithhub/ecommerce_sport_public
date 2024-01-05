@@ -1,2 +1,2 @@
-export {SportProfile} from './spotyProfile';
+export {SportProfile} from './SportWebProfile';
 export {InfoProfile} from './infoProfile';

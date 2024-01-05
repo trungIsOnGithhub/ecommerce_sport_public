@@ -44,8 +44,8 @@ export async function fakeDataStadiumArea(conn: Connection) {
         deleteAt: new Date(),
         quantityOrder: 68,
         stadium: randomStadiumID,
-        find: () => true,
-        clone: () => true
+        // find: () => true,
+        // clone: () => true
     });
   }
 }

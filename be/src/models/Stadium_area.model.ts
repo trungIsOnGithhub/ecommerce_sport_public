@@ -22,7 +22,7 @@ export interface IStadiumArea {
 
 const stadiumAreaSchema = new Schema<IStadiumArea>(
     {
-        name: { type: String, required: true, unique: true },
+        name: { type: String, required: true },
         size: { type: String },
         quantity: { type: Number, required: true },
         description: { type: String },

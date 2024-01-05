@@ -33,7 +33,7 @@ export const AdvertisingCart = ({ image, title, content }: AdvertisingCartType) 
     return (
         <BoxAdvertisingCart>
             <BoxContainAdvertisingCart>
-                <Image height="100px" width="100px" src={image} alt="logo spoty" />
+                <Image height="100px" width="100px" src={image} alt="logo SportWeb" />
                 <TypographyTitleCart>{title}</TypographyTitleCart>
                 <TypographyContentCart>{content}</TypographyContentCart>
             </BoxContainAdvertisingCart>

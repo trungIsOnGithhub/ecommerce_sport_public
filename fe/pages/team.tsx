@@ -528,7 +528,7 @@ const Detail: NextPageWithLayout = () => {
             <PaperContainStyles elevation={10}>
                 <BoxContainStyles className="searchBox">
                     <BoxSearchStyles>
-                        <TypographySearchStyles>SPOTY</TypographySearchStyles>
+                        <TypographySearchStyles>SportWeb</TypographySearchStyles>
                     </BoxSearchStyles>
                     <BoxSearchStyles>
                         <TypographyStyle>Kiến tạo cộng đồng bóng đá lành mạnh</TypographyStyle>
