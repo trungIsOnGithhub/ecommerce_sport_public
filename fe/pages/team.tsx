@@ -551,7 +551,7 @@ const Detail: NextPageWithLayout = () => {
                         </Grid>
                     </>
                 ) : flag ? (
-                    <Box sx={{ textAlign: 'center', color: 'gray' }}>Không tìm thấy kết quả nào</Box>
+                    <h2 style={{textAlign: "center", color: "gray"}}>KHÔNG TÌM THẤY KẾT QUẢ</h2>
                 ) : null}
             </Box>
             <Box>

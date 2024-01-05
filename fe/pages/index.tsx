@@ -176,7 +176,7 @@ const Home: NextPageWithLayout = ({ provinces }: any) => {
                         <PaginationCustom count={Math.ceil(count / NUMBER_OF_PAGES)} handleSubmit={handleSubmit} />
                     </>
                 ) : flag ? (
-                    <Box sx={{ textAlign: 'center', color: 'gray' }}>Không tìm thấy kết quả nào</Box>
+                    <h2 style={{textAlign: "center", color: "gray"}}>KHÔNG TÌM THẤY KẾT QUẢ</h2>
                 ) : null}
 
                 <PartTitle title={'Top sân đặt nhiều nhất'} />

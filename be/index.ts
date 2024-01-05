@@ -20,9 +20,9 @@ const connectionParam = {
 mongoose
     .connect(URL_DB, connectionParam)
     .then(() => {
-        fakeDataUser(mongoose.connection);
-        fakeDataStadium(mongoose.connection);
-        fakeDataStadiumArea(mongoose.connection);
+        // fakeDataUser(mongoose.connection);
+        // fakeDataStadium(mongoose.connection);
+        // fakeDataStadiumArea(mongoose.connection);
         console.log('Connect DB sucessfully');
     })
     .catch(() => console.log('Fail to connect DB'));
