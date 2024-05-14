@@ -15,13 +15,11 @@ const connectionParam = {
     useUnifiedTopology: true,
 } as ConnectOptions;
 
-// let dbSuccess = false;
 mongoose
     .connect(URL_DB, connectionParam)
     .then(() => {
         console.log('Connect DB sucessfully');
-        // dbSuccess = true;
-        fakeDataUser(mongoose.connection);
+        // fakeDataUser(mongoose.connection);
     })
     .catch(() => console.log('Fail to connect DB'));
 
