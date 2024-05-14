@@ -41,3 +41,9 @@ Run các lệnh cmd sau lần lượt
 // FE khởi động chậm ở lần đầu
 
 Truy cập ```localhost:3000``` cho trang web, ```localhost:3001``` cho api
+
+### Tổng quan:
+
+![Tổng quan kiến trúc](/assets/overview.png)
+
+![Lược đồ ánh xạ CSDL](/assets/schema.png)
